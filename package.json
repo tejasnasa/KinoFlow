@@ -16,8 +16,6 @@
     "express": "^4.20.0",
     "Math": "^0.0.1-security",
     "mathjs": "^13.1.1",
-    "mongo": "^0.1.0",
-    "mongoose": "^8.6.1",
     "node": "^22.8.0"
   }
 }

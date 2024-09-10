@@ -83,13 +83,8 @@ app.get("/home", (req, res) => {
       console.error(error);
     });
 });
-/*fetch(`https://api.themoviedb.org/3/movie/<<movieID>>/credits?api_key=<<your_api_key>>`)
-            .then(response => response.json())
-            .then((jsonData)=>jsonData.crew.filter(({job})=> job ==='Director'))
-            
-            https://api.themoviedb.org/3/movie/157336?api_key=f0cab01992a8b3fe9e70a7cb83715576&append_to_response=videos,images
 
-            */
+// for movie details
 app.get("/id/:id", (req, res) => {
   const { id } = req.params;
   const options = {
@@ -117,7 +112,6 @@ app.get("/id/:id", (req, res) => {
     .request(options)
     .then(function (response) {
       movie = response.data;
-      console.log(movie);
 
       axios
         .request(options2)
@@ -125,7 +119,6 @@ app.get("/id/:id", (req, res) => {
           movie2 = response.data;
           let dirfilt = ({ job }) => job === "Director";
           let director = movie2.crew.filter(dirfilt)[0].name;
-          console.log(movie2.cast[0]);
           res.render("details", { movie, movie2, director, names, reviews });
         })
         .catch(function (error) {
@@ -140,7 +133,6 @@ app.get("/id/:id", (req, res) => {
 // for search page
 app.post("/search", async (req, res) => {
   const userInput = req.body.name;
-  console.log("Received name:", userInput);
   try {
     const response = await axios.get(
       `https://api.themoviedb.org/3/search/movie?query=${userInput}`,
@@ -168,6 +160,8 @@ app.post("/search", async (req, res) => {
   }
 });
 
+
+// for random movie
 app.get("/random", (req, res) => {
   let flag = 0;
   while (flag === 0) {
@@ -199,10 +193,11 @@ app.get("/random", (req, res) => {
   }
 });
 
+
+// for movie recommendation (incomplete)
 app.post("/recommend/:id", async (req, res) => {
   const { id } = req.params;
   const movie = req.body.name1;
-  console.log("Received name:", userInput);
   try {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}/similar`,
@@ -225,6 +220,8 @@ app.post("/recommend/:id", async (req, res) => {
   }
 });
 
+
+// for browsing through various genres
 app.get("/genre/:gen", (req, res) => {
   const { gen } = req.params;
   if (gen === "action") {
@@ -278,6 +275,7 @@ app.get("/genre/:gen", (req, res) => {
       console.error(error);
     });
 });
+
 
 app.listen(3000, () => {
   console.log("LISTENING ON PORT 3000");
