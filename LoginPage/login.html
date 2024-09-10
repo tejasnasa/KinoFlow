@@ -1,138 +1,288 @@
 <!doctype html>
 <html lang="en">
+    <style>
+        body, html {
+          height: 100%;
+          margin: 0;
+        }
+    
+        .background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('your-image.jpg');
+          background-size: cover;
+          background-position: center;
+          z-index: -1; /* Push the image to the background */
+        }
+    
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5); /* Add transparency */
+          z-index: 0;
+        }
+    
+        .content {
+          position: relative;
+          color: rgb(255, 255, 255);
+          text-align: center;
+          z-index: 0;
+        }
+      </style>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
+    <link href="login.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <title>kinoFlow </title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-purple bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container-fluid">
-            <nav class="navbar navbar-dark bg-dark">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">
-                    <img src="Untitled.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                    kinoFlow
-                  </a>
-                </div>
-            </nav>
-          <a class="navbar-brand" href="#">kinoFlow</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand" href="#">
+            <img
+              src="C:\Users\manas\OneDrive\Desktop\vs files\web dev\kinoflow_vs\kinflow-removebg-preview.png"
+              alt="kinoflow logo"
+              width="100"
+              class="d-inline-block align-text-top"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Trending     </a>
-              </li>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul
+              class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+              style="--bs-scroll-height: 300px"
+            >
+              <button
+                type="button"
+                class="btn btn-primary me-2"
+                style="
+                  --bs-btn-padding-y: 0.3rem;
+                  --bs-btn-padding-x: 0.5rem;
+                  --bs-btn-font-size: 0.75rem;
+                "
+              >
+                SIGN IN
+              </button>
+  
+              <button class="btn btn-sm btn-outline-primary me-2" type="button">
+                CREATE ACCOUNT
+              </button>
+              <button class="btn btn-sm btn-outline-primary me-2" type="button">
+                FILMS
+              </button>
+              <!-- <button class="btn btn-sm btn-outline-primaary me-2" type="button">LIST</button> -->
+              <button class="btn btn-sm btn-outline-primary me-2" type="button">
+                LIST
+              </button>
+  
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Genre     </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Adventure  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Animated  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Comedy  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Drama  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Fantasy  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Historical  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Horror  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Musical  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Roamance  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Science Fiction  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Thriller  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Western  </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Hybrid Genre  </a></li>
-                  </ul>
-                </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Profile   </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Account Details  </a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Reviews  </a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Log out  </a></li>
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Genre
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Thriller</a></li>
+                  <li><a class="dropdown-item" href="#">Horror</a></li>
+                  <li><a class="dropdown-item" href="#">Romance</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Webseries </a>
-              </li>
+              <!-- <li class="nav-item">
+                          <a class="nav-link disabled" aria-disabled="true">Link</a>
+                      </li> -->
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
             </form>
           </div>
         </div>
       </nav>
         
-    <div class="card bg-dark text-light">
-        <img src="Screenshot.png">
-        <div class="card-img-overlay">
-            <nav class="nav">
-                <a class="nav-link active" aria-current="page" href="#">
-                    Account
-                </a>
-                <a class="nav-link" href="#">Watchlist</a>
-                <a class="nav-link" href="#">Blogs</a>
-                <a class="nav-link" href="#">Reviews</a>
-            </nav>
-            <div class="container">
-                
-                <img src="pexels.jpg" class="rounded float-end" height="300" width="280">    
-            </div>
-            <div class="container">
-                <div class="row g-3">
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Films Watched 198</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Following 78</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Followers 29</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Watched this year 29</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Blocked 12</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Mentions 5</div>
-                  </div>
-                </div>
-            </div>
-        </div>
-        <h5>Favourities : </h5>
-        
-        
-        <div class="card-body">
-            <p class="card-text">To support our initiative, follow us at :</p>
-            <a href="#" class="btn btn-primary">Instagram</a>
-            <a href="#" class="btn btn-primary">Twitter</a>
-        </div>
+    
+        <div class="background"></div>
+        <div class="overlay"></div>
+        <div class="content">
+        <h1>Welcome</h1>
+        <p>Enjoy the latest releases!</p>
+        <img src="epic-movie-scenes-screenshots-111__880.jpg" class="img-fluid" alt="...">
+    
     </div>
+
+    <div class="line" style="padding: 10px; align-items: center; color: white">
+        <hr />
+      </div>
+  
+      <!-- Remove the container if you want to extend the Footer to full width. -->
+      <div class="foot">
+        <!-- Footer -->
+        <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: black"
+        >
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+              <!--Grid row-->
+              <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <a class="navbar-brand" href="#">
+                    <img
+                      src="C:\Users\manas\OneDrive\Desktop\vs files\web dev\kinoflow_vs\kinflow-removebg-preview.png"
+                      alt=""
+                      width="300"
+                      class="d-inline-block align-text-top"
+                    />
+                  </a>
+                </div>
+                <!-- Grid column -->
+  
+                <hr class="w-100 clearfix d-md-none" />
+  
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+                  <p>
+                    <a class="text-white">MDBootstrap</a>
+                  </p>
+                  <p>
+                    <a class="text-white">MDWordPress</a>
+                  </p>
+                  <p>
+                    <a class="text-white">BrandFlow</a>
+                  </p>
+                  <p>
+                    <a class="text-white">Bootstrap Angular</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+  
+                <hr class="w-100 clearfix d-md-none" />
+  
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">
+                    Useful links
+                  </h6>
+                  <p>
+                    <a class="text-white">Your Account</a>
+                  </p>
+                  <p>
+                    <a class="text-white">Become an Affiliate</a>
+                  </p>
+                  <p>
+                    <a class="text-white">Shipping Rates</a>
+                  </p>
+                  <p>
+                    <a class="text-white">Help</a>
+                  </p>
+                </div>
+  
+                <!-- Grid column -->
+                <hr class="w-100 clearfix d-md-none" />
+  
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                  <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                  <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                  <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                  <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+  
+            <hr class="my-3" />
+  
+            <!-- Section: Copyright -->
+            <section class="p-3 pt-0">
+              <div class="row d-flex align-items-center">
+                <!-- Grid column -->
+                <div class="col-md-7 col-lg-8 text-center text-md-start">
+                  <!-- Copyright -->
+                  <div class="p-3">
+                    <a class="text-white" href="https://mdbootstrap.com/"></a>
+                  </div>
+                  <!-- Copyright -->
+                </div>
+                <!-- Grid column -->
+  
+                <!-- Grid column -->
+                <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                  <!-- Facebook -->
+                  <a
+                    class="btn btn-outline-light btn-floating m-1"
+                    class="text-white"
+                    role="button"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+  
+                  <!-- Twitter -->
+                  <a
+                    class="btn btn-outline-light btn-floating m-1"
+                    class="text-white"
+                    role="button"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+  
+                  <!-- Google -->
+                  <a
+                    class="btn btn-outline-light btn-floating m-1"
+                    class="text-white"
+                    role="button"
+                    ><i class="fab fa-google"></i
+                  ></a>
+  
+                  <!-- Instagram -->
+                  <a
+                    class="btn btn-outline-light btn-floating m-1"
+                    class="text-white"
+                    role="button"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+                <!-- Grid column -->
+              </div>
+            </section>
+            <!-- Section: Copyright -->
+          </div>
     
           
 </div>
