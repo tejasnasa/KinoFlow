@@ -1,10 +1,7 @@
 const express = require("express");
-const math = require("mathjs");
 const axios = require("axios");
 const app = express();
 const path = require("path");
-const mongoose = require("mongoose");
-const Review = require("./models/review");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -12,13 +9,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
-
-mongoose.connect("mongodb://localhost:27017/kinoflow");
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
-db.once("open", () => {
-  console.log("Database connected");
-});
 
 // for login page
 app.get("/", (req, res) => {
@@ -139,8 +129,6 @@ app.post("/search", async (req, res) => {
       result: "Error fetching data from API. Please try again.",
     });
   }
-  // You can now use the `name` value for further processing
-  // Redirect back to the home page
 });
 
 app.get("/random", (req, res) => {
@@ -172,6 +160,81 @@ app.get("/random", (req, res) => {
         console.error(error);
       });
   }
+});
+
+app.post("/recommend/:id", async (req, res) => {
+  const { id } = req.params;
+  const movie = req.body.name1;
+  console.log("Received name:", userInput);
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/similar`,
+      {
+        headers: {
+          accept: "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGNhYjAxOTkyYThiM2ZlOWU3MGE3Y2I4MzcxNTU3NiIsIm5iZiI6MTcyNTcxMjQ4NC45OTgwNTMsInN1YiI6IjY2ZDlkNTFmYjllOWEzODFlOTZkMDlkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uMnqTkdsj9-tuzPhKWIOJp1TviqUWt71rbn3dZ8drbU",
+        },
+      }
+    );
+    const movies = response.data.results;
+
+    res.render("search", { movies, movie });
+  } catch (error) {
+    console.error(error);
+    res.render("result", {
+      result: "Error fetching data from API. Please try again.",
+    });
+  }
+});
+
+app.get("/genre/:gen", (req, res) => {
+  const { gen } = req.params;
+  if (gen === "action"){
+    x = '28';
+  } else if (gen === "animation"){
+    x = '16';
+  }else if (gen === "comedy"){
+    x = '35';
+  }else if (gen === "crime"){
+    x = '80';
+  }else if (gen === "drama"){
+    x = '18';
+  }else if (gen === "romance"){
+    x = '10749';
+  }else if (gen === "scifi"){
+    x = '878';
+  }else if (gen === "mystery"){
+    x = '9648';
+  }
+  const options = {
+    method: "GET",
+    url: "https://api.themoviedb.org/3/discover/movie",
+    params: {
+      include_adult: 'false',
+      include_video: 'false',
+      language: 'en-US',
+      page: '1',
+      sort_by: 'popularity.desc',
+      with_genres: x
+    },
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGNhYjAxOTkyYThiM2ZlOWU3MGE3Y2I4MzcxNTU3NiIsIm5iZiI6MTcyNTcxMjQ4NC45OTgwNTMsInN1YiI6IjY2ZDlkNTFmYjllOWEzODFlOTZkMDlkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uMnqTkdsj9-tuzPhKWIOJp1TviqUWt71rbn3dZ8drbU",
+    },
+  };
+
+  axios
+    .request(options)
+    .then(function (response) {
+      movies = response.data.results;
+      console.log(movies)
+      res.render("search", movies, {action});
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
 });
 
 app.listen(3000, () => {
