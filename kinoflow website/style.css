@@ -1,0 +1,28 @@
+
+.navbar {
+    background-color: black; /* Replace with your desired background color */
+}
+.nav-item a {
+    color: gold;
+}
+/* Unvisited link */
+.nav-item a:link {
+    color: red;
+}
+
+/* Visited link */
+.nav-item a:visited {
+    color: green;
+}
+
+/* Mouse over link (hover) */
+.nav-item a:hover {
+    color: hotpink;
+}
+
+/* Selected link (active) */
+.nav-item a:active {
+    color: blue;
+}
+
+
