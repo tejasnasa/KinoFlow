@@ -2,8 +2,8 @@ const express = require("express");
 const axios = require("axios");
 const app = express();
 const path = require("path");
-const mongoose = require('mongoose')
-const Review = require('./models/review');
+const mongoose = require("mongoose");
+const Review = require("./models/review");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -12,12 +12,11 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
-
-mongoose.connect('mongodb://localhost:27017/kinoflow');
+mongoose.connect("mongodb://localhost:27017/kinoflow");
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", () => {
-    console.log("Database connected");
+  console.log("Database connected");
 });
 
 // for login page
@@ -116,8 +115,32 @@ app.get("/id/:id", (req, res) => {
 });
 
 // for search page
+app.post("/search", async (req, res) => {
+  const userInput = req.body.name;
+  console.log("Received name:", userInput);
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?query=${userInput}`,
+      {
+        headers: {
+          accept: "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGNhYjAxOTkyYThiM2ZlOWU3MGE3Y2I4MzcxNTU3NiIsIm5iZiI6MTcyNTcxMjQ4NC45OTgwNTMsInN1YiI6IjY2ZDlkNTFmYjllOWEzODFlOTZkMDlkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uMnqTkdsj9-tuzPhKWIOJp1TviqUWt71rbn3dZ8drbU",
+        },
+      }
+    );
+    const movies = response.data.results;
 
-
+    res.render("search", { movies, userInput });
+  } catch (error) {
+    console.error(error);
+    res.render("result", {
+      result: "Error fetching data from API. Please try again.",
+    });
+  }
+  // You can now use the `name` value for further processing
+  // Redirect back to the home page
+});
 
 app.listen(3000, () => {
   console.log("LISTENING ON PORT 3000");

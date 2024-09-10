@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style> </style>
-    <link href="style.css" rel="stylesheet">
+    <link href="C:\Users\manas\OneDrive\Desktop\projects\KinoFlow\kinoflow website\style.css" rel="stylesheet">
 
 </head>
 
@@ -17,7 +17,7 @@
 
 
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="C:\Users\manas\OneDrive\Desktop\vs files\web dev\kinoflow_vs\kinflow-removebg-preview.png"
@@ -28,23 +28,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 500px;">
 
 
                     <button type="button" class="btn btn-primary me-2"
                         style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                        LOGIN
+                        SIGN IN
                     </button>
-                    <button class="btn btn-sm btn-outline-secondary me-2" type="button">SIGN IN</button>
-                    <button class="btn btn-sm btn-outline-secondary me-2" type="button">CREATE ACCOUNT</button>
-                    <button class="btn btn-sm btn-outline-secondary me-2" type="button">FILMS</button>
-                    <button class="btn btn-sm btn-outline-secondary me-2" type="button">LIST</button>
+
+                    <button class="btn btn-sm btn-outline-primary me-2" type="button">CREATE ACCOUNT</button>
+                    <button class="btn btn-sm btn-outline-primary me-2" type="button">FILMS</button>
+                    <!-- <button class="btn btn-sm btn-outline-primaary me-2" type="button">LIST</button> -->
+                    <button class="btn btn-sm btn-outline-primary me-2" type="button">LIST</button>
 
 
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -52,18 +51,17 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Thriller</a></li>
+                            <li><a class="dropdown-item" href="#">Horror</a></li>
+                            <li><a class="dropdown-item" href="#">Romance</a></li>
+
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">Link</a>
-                    </li>
+                    </li> -->
                 </ul>
-                <form class="d-flex" role="search">
+                <form class="d-flex" role="search" >
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
@@ -73,9 +71,9 @@
 
 
 
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" style="margin-bottom: 10px;">
-        <div class="carousel-indicators"> <!--style="max-width: 540px-->
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators" style="background-color: transparent;"> <!--style="max-width: 540px-->
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
                 aria-label="Slide 2"></button>
@@ -86,25 +84,16 @@
             <div class="carousel-item active" data-bs-interval="10000" style="max-height: 400px;">
                 <img src="https://th.bing.com/th/id/R.f141845566c5f6863287fe27ad039f37?rik=kH38r0TRy%2b6AGg&riu=http%3a%2f%2fwww.impawards.com%2f2014%2fposters%2finterstellar_ver7_xlg.jpg&ehk=OK8Rxe7YfFYjZCf9jYNVsANdHPxzY4nm%2fVdY7W1R070%3d&risl=&pid=ImgRaw&r=0"
                     class="d-block w-100" alt="intersteller">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
-                </div>
+
             </div>
             <div class="carousel-item" data-bs-interval="2000" style="max-height: 400px;">
                 <img src="https://pbs.twimg.com/media/D2jvOdmUgAALnnx.jpg" class="d-block w-100" alt="endgame">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div>
+
             </div>
             <div class="carousel-item" style="max-height: 400px;">
                 <img src="https://th.bing.com/th/id/R.87c4632fe21265c748a36d55625e68db?rik=BobzwEPqdPVs9w&riu=http%3a%2f%2fimages2.fanpop.com%2fimage%2fphotos%2f12800000%2fInception-Banner-inception-2010-12831726-2000-919.jpg&ehk=vbT3fLpSwhlbe%2f5LQTiUVQOC%2bQdWLlogknzYzOXw8BE%3d&risl=&pid=ImgRaw&r=0"
                     class="d-block w-100" alt="inception">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
-                </div>
+
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -116,22 +105,22 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
+    <div class="space">Trending now</div> <!---this is space btw casorel and cards-->
 
     <div class="row"> <!--first inline cards-->
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="card mb-3" style="max-width: 540px; margin-left: 20px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="https://th.bing.com/th/id/OIP.o9BAkpXFyrkMKUDph-f3DAAAAA?rs=1&pid=ImgDetMain"
                             class="img-fluid rounded-start" alt="dune">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                        <div class="card-body" style="color: whitesmoke;">
+                            <h5 class="card-title">Dune</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                                 additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+
                         </div>
                     </div>
                 </div>
@@ -145,11 +134,11 @@
                             class="img-fluid rounded-start" alt="stree">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                        <div class="card-body" style="color: white;">
+                            <h5 class="card-title">Stree</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                                 additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+
                         </div>
                     </div>
                 </div>
@@ -157,22 +146,21 @@
         </div>
     </div>
 
-
-
     <div class="row"> <!--second inline cards-->
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="card mb-3" style="max-width: 540px; margin-left: 20px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="https://posterspy.com/wp-content/uploads/2021/12/batman4-1-scaled.jpg"
                             class="img-fluid rounded-start" alt="the batman">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        <div class="card-body" style="color: white;">
+                            <h5 class="card-title">Batman</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a
+                                natural lead-in to
                                 additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+
                         </div>
                     </div>
                 </div>
@@ -186,17 +174,72 @@
                             class="img-fluid rounded-start" alt="Annabella">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        <div class="card-body" style="color: white;">
+                            <h5 class="card-title">Annabella</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a
+                                natural lead-in to
                                 additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="exploremore">Explore more</div> <!--space btw cards and posters-->
+
+
+
+
+    <div class="posters">
+        <img src="https://posterspy.com/wp-content/uploads/2021/12/batman4-1-scaled.jpg" class="img-fluid" alt="batman"
+            style="max-width: 150px; border-radius: 10px; margin: 10px; margin-left: 20px;">
+
+        <img src="https://cdn11.bigcommerce.com/s-b72t4x/images/stencil/1280w/products/258284/189432/Aliens_Poster_-_Creature__09073.1594250664.jpg?c=2"
+            class="img-fluid" alt="aliens" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://www.slashfilm.com/wp/wp-content/images/2017-bestposter-justiceleague.jpg" class="img-fluid"
+            alt="justice league" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://webneel.com/daily/sites/default/files/images/daily/09-2019/2-movie-poster-design-aladdin-disney-glossy-composite.jpg"
+            class="img-fluid" alt="Alladin" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://th.bing.com/th/id/OIP.NFoNJeWWgxCgka2-WVUmOgHaKf?rs=1&pid=ImgDetMain" class="img-fluid"
+            alt="avatar" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/99d91628199851.55cb826531744.jpg"
+            class="img-fluid" alt="masaan" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/62332132039857.566bcebd67c82.jpg"
+            class="img-fluid" alt="Special 26" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://th.bing.com/th/id/R.af6cd1d6481d481500cb12b01cf75dd1?rik=KPfX1juBojpc4g&riu=http%3a%2f%2fwww.slashfilm.com%2fwp%2fwp-content%2fimages%2f2017-bestposter-thorragnarok.jpg&ehk=ReFeLBnqITBOQXTIuThCzJT9cJfQmzXdtEzMdGIwhjA%3d&risl=&pid=ImgRaw&r=0"
+            class="img-fluid" alt="Ragnarok"
+            style="max-width: 150px; border-radius: 10px; margin: 10px; margin-left: 20px;">
+
+        <img src="https://i.pinimg.com/originals/57/28/1b/57281be1ef9d0802e8340adb2c3a7da3.jpg" class="img-fluid"
+            alt="john carter" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://sothebys-md.brightspotcdn.com/dims4/default/268d65b/2147483647/strip/true/crop/1320x2000+0+0/resize/2048x3103!/quality/90/?url=http://sothebys-brightspot.s3.amazonaws.com/media-desk/d8/e9/d856235f456886fdba2e71a470ab/lot-136-posters-2.jpg"
+            class="img-fluid" alt="jaws" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://th.bing.com/th/id/R.677da579f4959495759fd6139ace19ff?rik=C3js58ahHK7xIg&riu=http%3a%2f%2fwww.horror.land%2fwp-content%2fuploads%2f2016%2f12%2fConjuring_2_Poster.jpg&ehk=leBGlZo6K9tpZvYic57tHR%2fd0MJV5lX29n%2bcTv6%2ft5Y%3d&risl=&pid=ImgRaw&r=0"
+            class="img-fluid" alt="conjuring 2" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aaa261108050255.5fb629683b2f1.jpg"
+            class="img-fluid" alt="titanic" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://graphicdesignjunction.com/wp-content/uploads/2012/03/large/movies-poster-13.jpg"
+            class="img-fluid" alt="wanderlust" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+
+        <img src="https://th.bing.com/th/id/R.805fbe5d1f82c05ccd982fb37ec243d5?rik=jzE1UR2ah%2b8zpA&riu=http%3a%2f%2fimages2.fanpop.com%2fimages%2fphotos%2f8400000%2fMovie-Posters-movies-8405245-1224-1773.jpg&ehk=k87cjy7XpNwrPb49EzeBjqw44Wxff4qiNh8iim3NcRI%3d&risl=&pid=ImgRaw&r=0"
+            class="img-fluid" alt="pirates" style="max-width: 150px; border-radius: 10px; margin: 10px;">
+    </div>
+
+
+
+
 
 
 
@@ -208,6 +251,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <div class="line" style="padding: 10px; align-items: center; color: white;"><hr></div>
 
 
 

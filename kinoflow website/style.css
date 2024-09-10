@@ -1,28 +1,45 @@
-
+*{
+    background-color: black;
+}
 .navbar {
     background-color: black; /* Replace with your desired background color */
 }
-.nav-item a {
-    color: gold;
-}
-/* Unvisited link */
-.nav-item a:link {
-    color: red;
-}
+
+
+
 
 /* Visited link */
 .nav-item a:visited {
-    color: green;
+    color: gold;
 }
 
 /* Mouse over link (hover) */
 .nav-item a:hover {
-    color: hotpink;
+    color: yellowgreen;
 }
 
 /* Selected link (active) */
 .nav-item a:active {
-    color: blue;
+    color: yellow;
 }
+.space{
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-size: large;
+    text-align: center;
+}
+.exploremore{
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-size: large;
+    text-align: center;
+    
+}
+.card-body{
+
+}
+
 
 
