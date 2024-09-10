@@ -1,124 +1,34 @@
 <%- include('partials/navbar')%>
 
 <section class="container">
-  <div class="row">
-    <!--first inline cards-->
-    <div class="col-sm-6 mb-3 mb-sm-0">
-      <div class="card mb-3" style="max-width: 540px; margin-left: 20px">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img
-              src="https://th.bing.com/th/id/OIP.o9BAkpXFyrkMKUDph-f3DAAAAA?rs=1&pid=ImgDetMain"
-              class="img-fluid rounded-start"
-              alt="dune"
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body" style="color: whitesmoke">
-              <h5 class="card-title">Dune</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card mb-3" style="max-width: 500px">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img
-              src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/cef91499375669.5ef19b8c006aa.jpg"
-              class="img-fluid rounded-start"
-              alt="stree"
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body" style="color: white">
-              <h5 class="card-title">Stree</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <!--second inline cards-->
-    <div class="col-sm-6 mb-3 mb-sm-0">
-      <div class="card mb-3" style="max-width: 540px; margin-left: 20px">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img
-              src="https://posterspy.com/wp-content/uploads/2021/12/batman4-1-scaled.jpg"
-              class="img-fluid rounded-start"
-              alt="the batman"
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body" style="color: white">
-              <h5 class="card-title">Batman</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card mb-3" style="max-width: 515px">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img
-              src="https://th.bing.com/th/id/OIP.9Rs4x9IDtcsCrVdQOkTJagHaLH?rs=1&pid=ImgDetMain"
-              class="img-fluid rounded-start"
-              alt="Annabella"
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body" style="color: white">
-              <h5 class="card-title">Annabella</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
+  <h2 style="color: white; margin-left: 20px; margin-top: 20px;">Trending Movies</h2>
   <div class="posters">
     <% for (let i = 0; i < 10; i++) { %>
-        <img src="https://image.tmdb.org/t/p/original<%= movies[i].poster_path %>" class="img-fluid"
-        alt="movie.title"
-        style="
-          max-width: 150px;
-          border-radius: 10px;
-          margin: 10px;
-          margin-left: 20px; ">
+    <a href="/id/<%= popmovies[i].id %>">
+    <img
+      src="https://image.tmdb.org/t/p/original<%= popmovies[i].poster_path %>"
+      class="img-fluid"
+      alt="movie.title"
+      style="
+        max-width: 150px;
+        border-radius: 10px;
+        margin: 10px;
+        margin-left: 20px;
+      "
+    />
+</a>
     <% } %>
 
+    <div class="line" style="padding: 10px; align-items: center; color: white">
+      <hr />
+    </div>
+
+    <h2 style="color: white; margin-left: 20px;">Popular Movies</h2>
+    <% for (let i = 0; i < 10; i++) { %>
     <img
-      src="https://posterspy.com/wp-content/uploads/2021/12/batman4-1-scaled.jpg"
+      src="https://image.tmdb.org/t/p/original<%= trenmovies[i].poster_path %>"
       class="img-fluid"
-      alt="batman"
+      alt="movie.title"
       style="
         max-width: 150px;
         border-radius: 10px;
@@ -126,102 +36,7 @@
         margin-left: 20px;
       "
     />
-
-    <img
-      src="https://cdn11.bigcommerce.com/s-b72t4x/images/stencil/1280w/products/258284/189432/Aliens_Poster_-_Creature__09073.1594250664.jpg?c=2"
-      class="img-fluid"
-      alt="aliens"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://www.slashfilm.com/wp/wp-content/images/2017-bestposter-justiceleague.jpg"
-      class="img-fluid"
-      alt="justice league"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://webneel.com/daily/sites/default/files/images/daily/09-2019/2-movie-poster-design-aladdin-disney-glossy-composite.jpg"
-      class="img-fluid"
-      alt="Alladin"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://th.bing.com/th/id/OIP.NFoNJeWWgxCgka2-WVUmOgHaKf?rs=1&pid=ImgDetMain"
-      class="img-fluid"
-      alt="avatar"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/99d91628199851.55cb826531744.jpg"
-      class="img-fluid"
-      alt="masaan"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/62332132039857.566bcebd67c82.jpg"
-      class="img-fluid"
-      alt="Special 26"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://th.bing.com/th/id/R.af6cd1d6481d481500cb12b01cf75dd1?rik=KPfX1juBojpc4g&riu=http%3a%2f%2fwww.slashfilm.com%2fwp%2fwp-content%2fimages%2f2017-bestposter-thorragnarok.jpg&ehk=ReFeLBnqITBOQXTIuThCzJT9cJfQmzXdtEzMdGIwhjA%3d&risl=&pid=ImgRaw&r=0"
-      class="img-fluid"
-      alt="Ragnarok"
-      style="
-        max-width: 150px;
-        border-radius: 10px;
-        margin: 10px;
-        margin-left: 20px;
-      "
-    />
-
-    <img
-      src="https://i.pinimg.com/originals/57/28/1b/57281be1ef9d0802e8340adb2c3a7da3.jpg"
-      class="img-fluid"
-      alt="john carter"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://sothebys-md.brightspotcdn.com/dims4/default/268d65b/2147483647/strip/true/crop/1320x2000+0+0/resize/2048x3103!/quality/90/?url=http://sothebys-brightspot.s3.amazonaws.com/media-desk/d8/e9/d856235f456886fdba2e71a470ab/lot-136-posters-2.jpg"
-      class="img-fluid"
-      alt="jaws"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://th.bing.com/th/id/R.677da579f4959495759fd6139ace19ff?rik=C3js58ahHK7xIg&riu=http%3a%2f%2fwww.horror.land%2fwp-content%2fuploads%2f2016%2f12%2fConjuring_2_Poster.jpg&ehk=leBGlZo6K9tpZvYic57tHR%2fd0MJV5lX29n%2bcTv6%2ft5Y%3d&risl=&pid=ImgRaw&r=0"
-      class="img-fluid"
-      alt="conjuring 2"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aaa261108050255.5fb629683b2f1.jpg"
-      class="img-fluid"
-      alt="titanic"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://graphicdesignjunction.com/wp-content/uploads/2012/03/large/movies-poster-13.jpg"
-      class="img-fluid"
-      alt="wanderlust"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
-
-    <img
-      src="https://th.bing.com/th/id/R.805fbe5d1f82c05ccd982fb37ec243d5?rik=jzE1UR2ah%2b8zpA&riu=http%3a%2f%2fimages2.fanpop.com%2fimages%2fphotos%2f8400000%2fMovie-Posters-movies-8405245-1224-1773.jpg&ehk=k87cjy7XpNwrPb49EzeBjqw44Wxff4qiNh8iim3NcRI%3d&risl=&pid=ImgRaw&r=0"
-      class="img-fluid"
-      alt="pirates"
-      style="max-width: 150px; border-radius: 10px; margin: 10px"
-    />
+    <% } %>
   </div>
 
   <script
