@@ -1,4 +1,14 @@
 <%- include('partials/navbar')%>
-    <h1><%=movie.title%></h1>
+<section class="container" style="color: white;">
+
+    <span style="margin-top: 80px; margin-left: 10px; font-size: 50px;"><%=movie.title%></span>
+    <span style="font-size: small; margin-left: 10px;"><b>Release date: </b><%=movie.release_date%></span>
+
+    <div style="display: flex;">
+        <img src="<%=`https://image.tmdb.org/t/p/original${movie.poster_path}`%>" alt="" style="height: 300px; margin: 10px">
+    </div>
+    
+</section>
+    
 </body>
 </html>
