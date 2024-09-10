@@ -81,7 +81,13 @@ app.get("/home", (req, res) => {
       console.error(error);
     });
 });
+/*fetch(`https://api.themoviedb.org/3/movie/<<movieID>>/credits?api_key=<<your_api_key>>`)
+            .then(response => response.json())
+            .then((jsonData)=>jsonData.crew.filter(({job})=> job ==='Director'))
+            
+            https://api.themoviedb.org/3/movie/157336?api_key=f0cab01992a8b3fe9e70a7cb83715576&append_to_response=videos,images
 
+            */
 app.get("/id/:id", (req, res) => {
   const { id } = req.params;
   const options = {
@@ -94,11 +100,35 @@ app.get("/id/:id", (req, res) => {
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGNhYjAxOTkyYThiM2ZlOWU3MGE3Y2I4MzcxNTU3NiIsIm5iZiI6MTcyNTcxMjQ4NC45OTgwNTMsInN1YiI6IjY2ZDlkNTFmYjllOWEzODFlOTZkMDlkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uMnqTkdsj9-tuzPhKWIOJp1TviqUWt71rbn3dZ8drbU",
     },
   };
+
+  const options2 = {
+    method: "GET",
+    url: `https://api.themoviedb.org/3/movie/${id}/credits`,
+    params: { language: "en-US" },
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGNhYjAxOTkyYThiM2ZlOWU3MGE3Y2I4MzcxNTU3NiIsIm5iZiI6MTcyNTk3ODUzOC4zMzQ2NTYsInN1YiI6IjY2ZDlkNTFmYjllOWEzODFlOTZkMDlkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jecx62oxOBjA-6_WXZmoSBUaHBaFH1LWfIybi9_q1hw",
+    },
+  };
   axios
     .request(options)
     .then(function (response) {
       movie = response.data;
-      res.render("details", movie);
+      console.log(movie);
+
+      axios
+        .request(options2)
+        .then(function (response) {
+          movie2 = response.data;
+          let dirfilt = (({job})=> job ==='Director');
+          let director = movie2.crew.filter(dirfilt)[0].name;
+          console.log(movie2.cast[0])
+          res.render("details", { movie, movie2 , director});
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
     })
     .catch(function (error) {
       console.error(error);
@@ -121,7 +151,7 @@ app.post("/search", async (req, res) => {
       }
     );
     const movies = response.data.results;
-    if (movies.length >= 18){
+    if (movies.length >= 18) {
       length = 18;
     } else {
       length = movies.length;
@@ -195,33 +225,33 @@ app.post("/recommend/:id", async (req, res) => {
 
 app.get("/genre/:gen", (req, res) => {
   const { gen } = req.params;
-  if (gen === "action"){
-    x = '28';
-  } else if (gen === "animation"){
-    x = '16';
-  }else if (gen === "comedy"){
-    x = '35';
-  }else if (gen === "crime"){
-    x = '80';
-  }else if (gen === "drama"){
-    x = '18';
-  }else if (gen === "romance"){
-    x = '10749';
-  }else if (gen === "scifi"){
-    x = '878';
-  }else if (gen === "mystery"){
-    x = '9648';
+  if (gen === "action") {
+    x = "28";
+  } else if (gen === "animation") {
+    x = "16";
+  } else if (gen === "comedy") {
+    x = "35";
+  } else if (gen === "crime") {
+    x = "80";
+  } else if (gen === "drama") {
+    x = "18";
+  } else if (gen === "romance") {
+    x = "10749";
+  } else if (gen === "scifi") {
+    x = "878";
+  } else if (gen === "mystery") {
+    x = "9648";
   }
   const options = {
     method: "GET",
     url: "https://api.themoviedb.org/3/discover/movie",
     params: {
-      include_adult: 'false',
-      include_video: 'false',
-      language: 'en-US',
-      page: '1',
-      sort_by: 'popularity.desc',
-      with_genres: x
+      include_adult: "false",
+      include_video: "false",
+      language: "en-US",
+      page: "1",
+      sort_by: "popularity.desc",
+      with_genres: x,
     },
     headers: {
       accept: "application/json",
@@ -235,12 +265,12 @@ app.get("/genre/:gen", (req, res) => {
     .then(function (response) {
       movies = response.data.results;
       userInput = gen;
-      if (movies.length >= 18){
+      if (movies.length >= 18) {
         length = 18;
       } else {
         length = movies.length;
       }
-      res.render("search", {movies, userInput, length});
+      res.render("search", { movies, userInput, length });
     })
     .catch(function (error) {
       console.error(error);

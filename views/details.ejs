@@ -1,14 +1,49 @@
 <%- include('partials/navbar')%>
-<section class="container" style="color: white;"  style="width: 1200px;">
+<section class="container" style="color: white; width: 1200px">
+  <div class="space"></div>
 
-    <span style="margin-top: 80px; margin-left: 10px; font-size: 50px;"><%=movie.title%></span>
-    <span style="font-size: small; margin-left: 10px;"><b>Release date: </b><%=movie.release_date%></span>
-
-    <div style="display: flex;">
-        <img src="<%=`https://image.tmdb.org/t/p/original${movie.poster_path}`%>" alt="" style="height: 300px; margin: 10px">
+  <div class="posters" style="display: flex; justify-content: flex-start">
+    <img
+      src="https://image.tmdb.org/t/p/original<%= movie.poster_path %>"
+      class="img-fluid"
+      alt=""
+      style="
+        max-width: 300px;
+        border-radius: 10px;
+        margin: 30px;
+        margin-left: 20px;
+        margin-top: 80px;
+      "
+    />
+    <div>
+      <div
+        style="
+          margin-top: 70px;
+          font-size: 50px;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+        "
+      >
+        <%= movie.title %>
+      </div>
+      <div style="font-size: 18px; color: grey">
+        <%= movie.tagline.toUpperCase() %>
+      </div>
+      <br /><br />
+      <div style="font-size: 20px">
+        <%= movie.overview %>
+        <br /><br />
+        <b>Director:</b> <%= director %>
+        <br />
+        <b>Cast:</b> <%= movie2.cast[0].name %><% for (let i = 1; i < 10; i++){ %>
+        <span>, <%=movie2.cast[i].name%></span>
+        <% } %>
+      </div>
     </div>
-    
+  </div>
+
+  <div class="line" style="padding: 10px; align-items: center; color: white">
+    <hr />
+  </div>
+
+  <%- include('partials/footer')%>
 </section>
-    
-</body>
-</html>
