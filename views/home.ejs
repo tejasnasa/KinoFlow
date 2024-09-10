@@ -1,7 +1,57 @@
 <%- include('partials/navbar')%>
-    
-    trending
-    pop
 
-</body>
-</html>
+<section class="container" style="width: 1200px;">
+  <h2 style="color: white; margin-left: 20px; margin-top: 80px">
+    Trending Movies
+  </h2>
+  <div class="posters">
+    <% for (let i = 0; i < 12; i++) { %>
+    <a href=<%=`/id/${movie.id}`%>>
+      <img
+        src="https://image.tmdb.org/t/p/original<%= popmovies[i].poster_path %>"
+        class="img-fluid"
+        alt="movie.title"
+        style="
+          max-width: 150px;
+          border-radius: 10px;
+          margin: 10px;
+          margin-left: 20px;
+        "
+      />
+    </a>
+    <% } %>
+
+    <div class="line" style="padding: 10px; align-items: center; color: white">
+      <hr />
+    </div>
+
+    <h2 style="color: white; margin-left: 20px">Popular Movies</h2>
+    <% for (let i = 0; i < 12; i++) { %>
+    <a href="/id/<%= trenmovies[i].id %>"></a>
+    <img
+      src="https://image.tmdb.org/t/p/original<%= trenmovies[i].poster_path %>"
+      class="img-fluid"
+      alt="movie.title"
+      style="
+        max-width: 150px;
+        border-radius: 10px;
+        margin: 10px;
+        margin-left: 20px;
+      "
+    />
+    <% } %>
+  </div>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <div class="line" style="padding: 10px; align-items: center; color: white">
+    <hr />
+  </div>
+
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+  <%- include('partials/footer')%>
+</section>
