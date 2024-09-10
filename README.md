@@ -1,6 +1,7 @@
 # KinoFlow
 
 Movie tracking, browsing and recommending website.
+
 Created by Tejas Nasa, Prantik Maitra, Manas Bawari and Ritik Raj.
 
 
