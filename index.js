@@ -50,31 +50,30 @@ app.get("/home", (req, res) => {
     },
   };
 
+  const options2 = {
+    method: "GET",
+    url: "https://api.themoviedb.org/3/discover/movie",
+    params: {
+      include_adult: "false",
+      include_video: "false",
+      language: "en-US",
+      page: "1",
+      sort_by: "popularity.desc",
+    },
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGNhYjAxOTkyYThiM2ZlOWU3MGE3Y2I4MzcxNTU3NiIsIm5iZiI6MTcyNTcxMjQ4NC45OTgwNTMsInN1YiI6IjY2ZDlkNTFmYjllOWEzODFlOTZkMDlkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uMnqTkdsj9-tuzPhKWIOJp1TviqUWt71rbn3dZ8drbU",
+    },
+  };
+
   axios
     .request(options)
     .then(function (response) {
       trenmovies = response.data.results;
       console.log(trenmovies);
-
-      const options = {
-        method: "GET",
-        url: "https://api.themoviedb.org/3/discover/movie",
-        params: {
-          include_adult: "false",
-          include_video: "false",
-          language: "en-US",
-          page: "1",
-          sort_by: "popularity.desc",
-        },
-        headers: {
-          accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGNhYjAxOTkyYThiM2ZlOWU3MGE3Y2I4MzcxNTU3NiIsIm5iZiI6MTcyNTcxMjQ4NC45OTgwNTMsInN1YiI6IjY2ZDlkNTFmYjllOWEzODFlOTZkMDlkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uMnqTkdsj9-tuzPhKWIOJp1TviqUWt71rbn3dZ8drbU",
-        },
-      };
-
       axios
-        .request(options)
+        .request(options2)
         .then(function (response) {
           popmovies = response.data.results;
           res.render("home", popmovies);
@@ -82,6 +81,29 @@ app.get("/home", (req, res) => {
         .catch(function (error) {
           console.error(error);
         });
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+});
+
+app.get("/id/:id", (req, res) => {
+  const { id } = req.params;
+  const options = {
+    method: "GET",
+    url: `https://api.themoviedb.org/3/movie/${id}`,
+    params: { language: "en-US" },
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGNhYjAxOTkyYThiM2ZlOWU3MGE3Y2I4MzcxNTU3NiIsIm5iZiI6MTcyNTcxMjQ4NC45OTgwNTMsInN1YiI6IjY2ZDlkNTFmYjllOWEzODFlOTZkMDlkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uMnqTkdsj9-tuzPhKWIOJp1TviqUWt71rbn3dZ8drbU",
+    },
+  };
+  axios
+    .request(options)
+    .then(function (response) {
+      movie = response.data;
+      res.render("details", movie);
     })
     .catch(function (error) {
       console.error(error);
