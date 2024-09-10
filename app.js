@@ -12,31 +12,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
-// for login page
-app.get("/", (req, res) => {
-  const options = {
-    method: "GET",
-    url: "https://api.themoviedb.org/3/discover/movie",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGNhYjAxOTkyYThiM2ZlOWU3MGE3Y2I4MzcxNTU3NiIsIm5iZiI6MTcyNTcxMjQ4NC45OTgwNTMsInN1YiI6IjY2ZDlkNTFmYjllOWEzODFlOTZkMDlkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uMnqTkdsj9-tuzPhKWIOJp1TviqUWt71rbn3dZ8drbU",
-    },
-  };
-
-  axios
-    .request(options)
-    .then(function (response) {
-      movies = response.data.results;
-      res.render("login", movies);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-});
 
 // for home page
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
   const options = {
     method: "GET",
     url: "https://api.themoviedb.org/3/movie/top_rated",
