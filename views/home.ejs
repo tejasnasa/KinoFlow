@@ -1,12 +1,12 @@
 <%- include('partials/navbar')%>
 
-<section class="container">
-  <h2 style="color: white; margin-left: 20px; margin-top: 20px">
+<section class="container" style="width: 1200px;">
+  <h2 style="color: white; margin-left: 20px; margin-top: 80px">
     Trending Movies
   </h2>
   <div class="posters">
-    <% for (let i = 0; i < 10; i++) { %>
-    <a href=<%=`/id/${movie.id}`%>>
+    <% for (let i = 0; i < 12; i++) { %>
+    <a href=<%=`/id/${popmovies[i].id}`%>>
       <img
         src="https://image.tmdb.org/t/p/original<%= popmovies[i].poster_path %>"
         class="img-fluid"
@@ -17,7 +17,7 @@
           margin: 10px;
           margin-left: 20px;
         "
-      />
+      >
     </a>
     <% } %>
 
@@ -26,7 +26,7 @@
     </div>
 
     <h2 style="color: white; margin-left: 20px">Popular Movies</h2>
-    <% for (let i = 0; i < 10; i++) { %>
+    <% for (let i = 0; i < 12; i++) { %>
     <a href="/id/<%= trenmovies[i].id %>"></a>
     <img
       src="https://image.tmdb.org/t/p/original<%= trenmovies[i].poster_path %>"
@@ -38,7 +38,7 @@
         margin: 10px;
         margin-left: 20px;
       "
-    />
+    >
     <% } %>
   </div>
 
