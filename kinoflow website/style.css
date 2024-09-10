@@ -4,13 +4,9 @@
 .navbar {
     background-color: black; /* Replace with your desired background color */
 }
-.nav-item a {
-    color: gold;
-}
-/* Unvisited link */
-.nav-item a:link {
-    color: gold;
-}
+
+
+
 
 /* Visited link */
 .nav-item a:visited {
@@ -19,12 +15,12 @@
 
 /* Mouse over link (hover) */
 .nav-item a:hover {
-    color: yellow;
+    color: yellowgreen;
 }
 
 /* Selected link (active) */
 .nav-item a:active {
-    color: rgb(173, 142, 6);
+    color: yellow;
 }
 .space{
     padding: 20px;
