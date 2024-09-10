@@ -2,7 +2,8 @@
 
 <section class="container" style="width: 1200px;">
 <h2 style="color: white; margin-left: 20px; margin-top: 80px;">Search results for: <%= userInput %></h2>
-<% for  (let i = 0; i < 18; i++) { %>
+
+<% for (let i = 0; i < length; i++) { %>
 
     <a href=<%=`/id/${movies[i].id}`%> style = "margin: 5px; display: inline-block; text-align: center;text-decoration: none;" >
 
