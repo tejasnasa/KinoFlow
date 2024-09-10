@@ -4,6 +4,8 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
+const names = require('./seeds/names')
+const reviews = require('./seeds/reviewset')
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -121,10 +123,10 @@ app.get("/id/:id", (req, res) => {
         .request(options2)
         .then(function (response) {
           movie2 = response.data;
-          let dirfilt = (({job})=> job ==='Director');
+          let dirfilt = ({ job }) => job === "Director";
           let director = movie2.crew.filter(dirfilt)[0].name;
-          console.log(movie2.cast[0])
-          res.render("details", { movie, movie2 , director});
+          console.log(movie2.cast[0]);
+          res.render("details", { movie, movie2, director, names, reviews });
         })
         .catch(function (error) {
           console.error(error);
