@@ -1,23 +1,24 @@
 <%- include('partials/navbar') %>
 
 <section class="container" style="width: 1200px;">
-  <h3 style="color: white; margin-left: 20px; margin-top: 80px">
+  <h3 style="color: white; margin-left: 30px; margin-top: 80px">
     Trending Movies
   </h3>
   <div class="posters" style="max-width: fit-content;
   margin-left: auto;
-  margin-right: auto;">
+  margin-right: auto;"><div style="display: flex; justify-content: space-evenly; height: 500px; flex-wrap: wrap; width: 100%;">
     <% for (let i = 0; i < 12; i++) { %>
     <a href=<%=`/id/${popmovies[i].id}`%>>
        <img src="https://image.tmdb.org/t/p/original<%= popmovies[i].poster_path %>" class="img-fluid" alt="movie.title" style="max-width: 150px;border-radius: 10px;margin: 10px;margin-left: 20px;">
       </a>
-    <% } %>
+    <% } %></div>
 
     <div class="line" style="padding: 10px; align-items: center; color: white">
       <hr />
     </div>
 
-    <h3 style="color: white; margin-left: 20px">Popular Movies</h3>
+    <h3 style="color: white; margin-left: 30px">Popular Movies</h3>
+    <div style="display: flex; justify-content: space-evenly; height: 500px; flex-wrap: wrap; width: 100%;">
     <% for (let i = 0; i < 12; i++) { %>
     <a href="/id/<%= trenmovies[i].id %>">
     <img
@@ -32,7 +33,7 @@
       "
     >
     </a>
-    <% } %>
+    <% } %></div>
   </div>
 
   <div class="line" style="padding: 10px; align-items: center; color: white">

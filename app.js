@@ -121,8 +121,13 @@ app.post("/search", async (req, res) => {
       }
     );
     const movies = response.data.results;
+    if (movies.length >= 18){
+      length = 18;
+    } else {
+      length = movies.length;
+    }
 
-    res.render("search", { movies, userInput });
+    res.render("search", { movies, userInput, length });
   } catch (error) {
     console.error(error);
     res.render("result", {
@@ -229,8 +234,13 @@ app.get("/genre/:gen", (req, res) => {
     .request(options)
     .then(function (response) {
       movies = response.data.results;
-      console.log(movies)
-      res.render("search", movies, {action});
+      userInput = gen;
+      if (movies.length >= 18){
+        length = 18;
+      } else {
+        length = movies.length;
+      }
+      res.render("search", {movies, userInput, length});
     })
     .catch(function (error) {
       console.error(error);
