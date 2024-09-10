@@ -1,4 +1,4 @@
-module.exports.reviewset = [
+module.exports = [
     {
         review: "An absolute masterpiece! The plot twists kept me on the edge of my seat, and the performances were top-notch.",
         rating: 5
