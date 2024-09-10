@@ -1,10 +1,10 @@
 <%- include('partials/navbar')%>
 
-<section class="container">
+<section class="container" style="width: 1200px;">
 <h2 style="color: white; margin-left: 20px; margin-top: 80px;">Search results for: <%= userInput %></h2>
 <% for  (let i = 0; i < 18; i++) { %>
 
-    <a href=<%=`/id/${movies[i].id}`%> style = "margin-left: 20px; display: inline-block; text-align: center;text-decoration: none;" >
+    <a href=<%=`/id/${movies[i].id}`%> style = "margin: 5px; display: inline-block; text-align: center;text-decoration: none;" >
 
         <img src="https://image.tmdb.org/t/p/original<%= movies[i].poster_path %>" class="img-fluid"
         alt="<%= movies[i].title %>"

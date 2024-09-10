@@ -1,5 +1,40 @@
 <!doctype html>
 <html lang="en">
+    <style>
+        body, html {
+          height: 100%;
+          margin: 0;
+        }
+    
+        .background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('your-image.jpg');
+          background-size: cover;
+          background-position: center;
+          z-index: -1; /* Push the image to the background */
+        }
+    
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5); /* Add transparency */
+          z-index: 0;
+        }
+    
+        .content {
+          position: relative;
+          color: rgb(255, 255, 255);
+          text-align: center;
+          z-index: 0;
+        }
+      </style>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -35,7 +70,7 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul
               class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-              style="--bs-scroll-height: 500px"
+              style="--bs-scroll-height: 300px"
             >
               <button
                 type="button"
@@ -96,179 +131,15 @@
         </div>
       </nav>
         
-    <div class="card bg-dark text-light">
-        <img src="Screenshot.png">
-        <div class="card-img-overlay">
-            <nav class="nav">
-                <a class="nav-link active" aria-current="page" href="#">
-                    Account
-                </a>
-                <a class="nav-link" href="#">Watchlist</a>
-                <a class="nav-link" href="#">Blogs</a>
-                <a class="nav-link" href="#">Reviews</a>
-            </nav>
-            <div class="container">
-                <img src="pexels.jpg" class="rounded float-end" height="200" width="180">    
-            </div>
-            <div class="container">
-                <div class="row g-3">
-                  <div class="col-md-5">
-                    <div class="p-2 border bg-dark">Films Watched  - 198</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Following  - 78</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Followers  - 29</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Watched this year  - 29</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Blocked  - 12</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Mentions  - 5</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Puplfictioner</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">pulpfiction4323@gmail.com</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark"></div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Mentions  - 5</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Mentions  - 5</div>
-                  </div>
-                  <div class="col-5">
-                    <div class="p-2 border bg-dark">Mentions  - 5</div>
-                  </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="posters">
-            <h5>Favourities : </h5>
-
-            <img
-              src="https://posterspy.com/wp-content/uploads/2021/12/batman4-1-scaled.jpg"
-              class="img-fluid"
-              alt="batman"
-              style="
-                max-width: 150px;
-                border-radius: 10px;
-                margin: 10px;
-                margin-left: 20px;
-              "
-            />
-      
-            <img
-              src="https://cdn11.bigcommerce.com/s-b72t4x/images/stencil/1280w/products/258284/189432/Aliens_Poster_-_Creature__09073.1594250664.jpg?c=2"
-              class="img-fluid"
-              alt="aliens"
-              style="max-width: 150px; border-radius: 10px; margin: 10px"
-            />
-      
-            <img
-              src="https://www.slashfilm.com/wp/wp-content/images/2017-bestposter-justiceleague.jpg"
-              class="img-fluid"
-              alt="justice league"
-              style="max-width: 150px; border-radius: 10px; margin: 10px"
-            />
-      
-            <img
-              src="https://webneel.com/daily/sites/default/files/images/daily/09-2019/2-movie-poster-design-aladdin-disney-glossy-composite.jpg"
-              class="img-fluid"
-              alt="Alladin"
-              style="max-width: 150px; border-radius: 10px; margin: 10px"
-            />
-      
-            <img
-              src="https://th.bing.com/th/id/OIP.NFoNJeWWgxCgka2-WVUmOgHaKf?rs=1&pid=ImgDetMain"
-              class="img-fluid"
-              alt="avatar"
-              style="max-width: 150px; border-radius: 10px; margin: 10px"
-            />
-      
-            <img
-              src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/99d91628199851.55cb826531744.jpg"
-              class="img-fluid"
-              alt="masaan"
-              style="max-width: 150px; border-radius: 10px; margin: 10px"
-            />
-      
-            <img
-              src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/62332132039857.566bcebd67c82.jpg"
-              class="img-fluid"
-              alt="Special 26"
-              style="max-width: 150px; border-radius: 10px; margin: 10px"
-            />
-      
-          </div>
-        <div class="posters">
-            <h4>Recent : </h4>
-            <img
-            src="https://th.bing.com/th/id/R.af6cd1d6481d481500cb12b01cf75dd1?rik=KPfX1juBojpc4g&riu=http%3a%2f%2fwww.slashfilm.com%2fwp%2fwp-content%2fimages%2f2017-bestposter-thorragnarok.jpg&ehk=ReFeLBnqITBOQXTIuThCzJT9cJfQmzXdtEzMdGIwhjA%3d&risl=&pid=ImgRaw&r=0"
-            class="img-fluid"
-            alt="Ragnarok"
-            style="
-              max-width: 150px;
-              border-radius: 10px;
-              margin: 10px;
-              margin-left: 20px;
-            "
-          />
     
-          <img
-            src="https://i.pinimg.com/originals/57/28/1b/57281be1ef9d0802e8340adb2c3a7da3.jpg"
-            class="img-fluid"
-            alt="john carter"
-            style="max-width: 150px; border-radius: 10px; margin: 10px"
-          />
+        <div class="background"></div>
+        <div class="overlay"></div>
+        <div class="content">
+        <h1>Welcome</h1>
+        <p>Enjoy the latest releases!</p>
+        <img src="epic-movie-scenes-screenshots-111__880.jpg" class="img-fluid" alt="...">
     
-          <img
-            src="https://sothebys-md.brightspotcdn.com/dims4/default/268d65b/2147483647/strip/true/crop/1320x2000+0+0/resize/2048x3103!/quality/90/?url=http://sothebys-brightspot.s3.amazonaws.com/media-desk/d8/e9/d856235f456886fdba2e71a470ab/lot-136-posters-2.jpg"
-            class="img-fluid"
-            alt="jaws"
-            style="max-width: 150px; border-radius: 10px; margin: 10px"
-          />
-    
-          <img
-            src="https://th.bing.com/th/id/R.677da579f4959495759fd6139ace19ff?rik=C3js58ahHK7xIg&riu=http%3a%2f%2fwww.horror.land%2fwp-content%2fuploads%2f2016%2f12%2fConjuring_2_Poster.jpg&ehk=leBGlZo6K9tpZvYic57tHR%2fd0MJV5lX29n%2bcTv6%2ft5Y%3d&risl=&pid=ImgRaw&r=0"
-            class="img-fluid"
-            alt="conjuring 2"
-            style="max-width: 150px; border-radius: 10px; margin: 10px"
-          />
-    
-          <img
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aaa261108050255.5fb629683b2f1.jpg"
-            class="img-fluid"
-            alt="titanic"
-            style="max-width: 150px; border-radius: 10px; margin: 10px"
-          />
-    
-          <img
-            src="https://graphicdesignjunction.com/wp-content/uploads/2012/03/large/movies-poster-13.jpg"
-            class="img-fluid"
-            alt="wanderlust"
-            style="max-width: 150px; border-radius: 10px; margin: 10px"
-          />
-    
-          <img
-            src="https://th.bing.com/th/id/R.805fbe5d1f82c05ccd982fb37ec243d5?rik=jzE1UR2ah%2b8zpA&riu=http%3a%2f%2fimages2.fanpop.com%2fimages%2fphotos%2f8400000%2fMovie-Posters-movies-8405245-1224-1773.jpg&ehk=k87cjy7XpNwrPb49EzeBjqw44Wxff4qiNh8iim3NcRI%3d&risl=&pid=ImgRaw&r=0"
-            class="img-fluid"
-            alt="pirates"
-            style="max-width: 150px; border-radius: 10px; margin: 10px"
-          />
-          <br><br>
-        </div>
     </div>
- 
 
     <div class="line" style="padding: 10px; align-items: center; color: white">
         <hr />
