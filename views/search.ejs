@@ -1,4 +1,22 @@
 <%- include('partials/navbar')%>
-    <h1><%=movies[0].title%></h1>
-</body>
-</html>
+
+<section class="container">
+<h2 style="color: white; margin-left: 20px; margin-top: 20px;">Search results for: <%= userInput %></h2>
+<% for (let movie of movies) { %>
+
+    <a href=<%=`/id/${movie.id}`%> style = "margin-left: 20px; display: inline-block; text-align: center;text-decoration: none;" >
+
+        <img src="https://image.tmdb.org/t/p/original<%= movie.poster_path %>" class="img-fluid"
+        alt="<%= movie.title %>"
+        style="
+          max-width: 150px;
+          border-radius: 10px;
+          margin: 10px;
+          margin-left: 20px;
+        ">
+
+
+    </a>
+<% } %>
+</section>
+<%- include('partials/footer')%>

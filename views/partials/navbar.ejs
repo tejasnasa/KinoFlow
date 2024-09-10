@@ -21,30 +21,40 @@
     >
       <div class="container-fluid">
         <div style="display: flex; justify-content: left">
-        <a class="navbar-brand" href="#">
-          <img
-            src="logo.png"
-            alt="kinoflow"
-            width="100"
-            class="d-inline-block align-text-top"
-          />
-        </a>
-          
-            <div style="margin: 10px; color: white;">Home</div>
-            <div style="margin: 10px; color: white;">Random</div>
-            <div style="margin: 10px; color: white;">Recommend</div>
+          <a class="navbar-brand" href="#">
+            <img
+              src="logo.png"
+              alt="kinoflow"
+              width="100"
+              class="d-inline-block align-text-top"
+            />
+          </a>
+
+          <div style="margin: 10px; color: white"><a href="/home">Home</a></div>
+          <div style="margin: 10px; color: white">
+            <a href="/random/533535">Random</a>
           </div>
-        
+          <div style="margin: 10px; color: white"><a href="/recommend">Recommend</a></div>
+        </div>
+
         <div style="display: flex; justify-content: right">
           <button type="button" class="btn btn-primary me-2">LOG IN</button>
 
           <button class="btn btn-sm btn-outline-primary me-2" type="button">
             SIGN UP
           </button>
-          <form class="d-flex" action="/search" method="POST"> 
-            <input class="form-control me-2" type="text" name="name" placeholder="Pulp Fiction" required> 
-            <button class="btn btn-outline-success" type="submit">Search</button></form>
-          
+          <form class="d-flex" action="/search" method="POST">
+            <input
+              class="form-control me-2"
+              type="text"
+              name="name"
+              placeholder="Pulp Fiction"
+              required
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
         </div>
       </div>
     </nav>

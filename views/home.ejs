@@ -1,30 +1,33 @@
 <%- include('partials/navbar')%>
 
 <section class="container">
-  <h2 style="color: white; margin-left: 20px; margin-top: 20px;">Trending Movies</h2>
+  <h2 style="color: white; margin-left: 20px; margin-top: 20px">
+    Trending Movies
+  </h2>
   <div class="posters">
     <% for (let i = 0; i < 10; i++) { %>
-    <a href="/id/<%= popmovies[i].id %>">
-    <img
-      src="https://image.tmdb.org/t/p/original<%= popmovies[i].poster_path %>"
-      class="img-fluid"
-      alt="movie.title"
-      style="
-        max-width: 150px;
-        border-radius: 10px;
-        margin: 10px;
-        margin-left: 20px;
-      "
-    />
-</a>
+    <a href=<%=`/id/${movie.id}`%>>
+      <img
+        src="https://image.tmdb.org/t/p/original<%= popmovies[i].poster_path %>"
+        class="img-fluid"
+        alt="movie.title"
+        style="
+          max-width: 150px;
+          border-radius: 10px;
+          margin: 10px;
+          margin-left: 20px;
+        "
+      />
+    </a>
     <% } %>
 
     <div class="line" style="padding: 10px; align-items: center; color: white">
       <hr />
     </div>
 
-    <h2 style="color: white; margin-left: 20px;">Popular Movies</h2>
+    <h2 style="color: white; margin-left: 20px">Popular Movies</h2>
     <% for (let i = 0; i < 10; i++) { %>
+    <a href="/id/<%= trenmovies[i].id %>"></a>
     <img
       src="https://image.tmdb.org/t/p/original<%= trenmovies[i].poster_path %>"
       class="img-fluid"
