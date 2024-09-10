@@ -10,31 +10,30 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <style></style>
-    <link href="style.css" rel="stylesheet" />
   </head>
 
-  <body style="background-color: black">
+  <body style="background-color: #000814">
     <nav
       class="navbar navbar-expand-sm navbar-dark"
-      style="background-color: rgb(97, 28, 7); height: 60px; position: fixed; width:100%; top: 0px;"
+      style="
+        background-color: #001d3d;
+        height: 60px;
+        position: fixed;
+        width: 100%;
+        top: 0px;
+      "
     >
       <div class="container-fluid">
         <div style="display: flex; justify-content: left">
-          <a class="navbar-brand" href="#">
-            <img
-              src="logo.png"
-              alt="kinoflow"
-              width="100"
-              class="d-inline-block align-text-top"
-            />
-          </a>
+          <a class="navbar-brand" href="#"> </a>
 
           <div style="margin: 10px; color: white"><a href="/home">Home</a></div>
           <div style="margin: 10px; color: white">
-            <a href="/random/533535">Random</a>
+            <a href="/id/<%= Math.floor(Math.random()*1000) %>">Random</a>
           </div>
-          <div style="margin: 10px; color: white"><a href="/recommend">Recommend</a></div>
+          <div style="margin: 10px; color: white">
+            <a href="/recommend">Recommend</a>
+          </div>
         </div>
 
         <div style="display: flex; justify-content: right">

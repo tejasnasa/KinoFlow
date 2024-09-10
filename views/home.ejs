@@ -6,7 +6,7 @@
   </h2>
   <div class="posters">
     <% for (let i = 0; i < 12; i++) { %>
-    <a href=<%=`/id/${movie.id}`%>>
+    <a href=<%=`/id/${popmovies[i].id}`%>>
       <img
         src="https://image.tmdb.org/t/p/original<%= popmovies[i].poster_path %>"
         class="img-fluid"
@@ -17,7 +17,7 @@
           margin: 10px;
           margin-left: 20px;
         "
-      />
+      >
     </a>
     <% } %>
 
@@ -38,7 +38,7 @@
         margin: 10px;
         margin-left: 20px;
       "
-    />
+    >
     <% } %>
   </div>
 
