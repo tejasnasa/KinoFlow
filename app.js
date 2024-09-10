@@ -1,4 +1,5 @@
 const express = require("express");
+const math = require("mathjs");
 const axios = require("axios");
 const app = express();
 const path = require("path");
@@ -140,6 +141,37 @@ app.post("/search", async (req, res) => {
   }
   // You can now use the `name` value for further processing
   // Redirect back to the home page
+});
+
+app.get("/random", (req, res) => {
+  let flag = 0;
+  while (flag === 0) {
+    const options = {
+      method: "GET",
+      url: "https://api.themoviedb.org/3/discover/movie",
+      params: {
+        page: Math.floor(Math.random() * 500),
+      },
+      headers: {
+        accept: "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGNhYjAxOTkyYThiM2ZlOWU3MGE3Y2I4MzcxNTU3NiIsIm5iZiI6MTcyNTcxMjQ4NC45OTgwNTMsInN1YiI6IjY2ZDlkNTFmYjllOWEzODFlOTZkMDlkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uMnqTkdsj9-tuzPhKWIOJp1TviqUWt71rbn3dZ8drbU",
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        movie = response.data.results[0];
+        res.render("details", movie);
+        if (response.data.success === true) {
+          flag = 1;
+        }
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }
 });
 
 app.listen(3000, () => {
