@@ -9,6 +9,7 @@
       alt=""
       style="
         max-width: 300px;
+        height: fit-content;
         border-radius: 10px;
         margin: 30px;
         margin-left: 20px;
@@ -34,8 +35,8 @@
         <br /><br />
         <b>Director:</b> <%= director %>
         <br />
-        <b>Cast:</b> <%= movie2.cast[0].name %><% for (let i = 1; i < 10; i++){ %>
-        <span>, <%=movie2.cast[i].name%></span>
+        <b>Cast:</b> <%= movieCredits.cast[0].name %><% for (let i = 1; i < 10; i++){ %>
+        <span>, <%=movieCredits.cast[i].name%></span>
         <% } %>
       </div>
     </div>

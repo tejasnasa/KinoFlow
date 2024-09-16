@@ -8,8 +8,8 @@
   margin-left: auto;
   margin-right: auto;"><div style="display: flex; justify-content: space-evenly; height: 500px; flex-wrap: wrap; width: 100%;">
     <% for (let i = 0; i < 12; i++) { %>
-    <a href=<%=`/id/${popmovies[i].id}`%>>
-       <img src="https://image.tmdb.org/t/p/original<%= popmovies[i].poster_path %>" class="img-fluid" alt="movie.title" style="max-width: 150px;border-radius: 10px;margin: 10px;margin-left: 20px;">
+    <a href=<%=`/id/${popMovies.results[i].id}`%>>
+       <img src="https://image.tmdb.org/t/p/original<%= popMovies.results[i].poster_path %>" class="img-fluid" alt="movie.title" style="max-width: 150px;border-radius: 10px;margin: 10px;margin-left: 20px;">
       </a>
     <% } %></div>
 
@@ -20,9 +20,9 @@
     <h3 style="color: white; margin-left: 30px">Popular Movies</h3>
     <div style="display: flex; justify-content: space-evenly; height: 500px; flex-wrap: wrap; width: 100%;">
     <% for (let i = 0; i < 12; i++) { %>
-    <a href="/id/<%= trenmovies[i].id %>">
+    <a href="/id/<%= trenMovies.results[i].id %>">
     <img
-      src="https://image.tmdb.org/t/p/original<%= trenmovies[i].poster_path %>"
+      src="https://image.tmdb.org/t/p/original<%= trenMovies.results[i].poster_path %>"
       class="img-fluid"
       alt="movie.title"
       style="
