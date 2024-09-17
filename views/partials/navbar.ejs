@@ -32,6 +32,10 @@
         margin-right: 180px;
       }
       @media screen and (max-width: 800px) {
+        .nav-butt {
+          margin-right: 0;
+          margin-left: 0;
+        }
         nav {
           height: 70px;
         }
@@ -76,10 +80,10 @@
               style="height: 70px"
           /></a>
 
-          <div style="margin: 10px; color: white">
+          <div class = "nav-butt" style="margin: 10px; color: white">
             <a href="/" style="text-decoration: none; color: white">Home</a>
           </div>
-          <div style="margin: 10px; color: white">
+          <div class = "nav-butt" style="margin: 10px; color: white">
             <a
               href="/id/<%= Math.floor(Math.random()*1000) %>"
               style="text-decoration: none; color: white"
