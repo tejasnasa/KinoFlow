@@ -16,7 +16,7 @@
     </div>
 
     <h3 style="color: white; margin-left: 30px">Popular Movies</h3>
-    <div style="display: flex; justify-content: space-evenly; height: 500px; flex-wrap: wrap; width: 100%;">
+    <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
     <% for (let i = 0; i < 12; i++) { %>
     <a href="/id/<%= trenMovies.results[i].id %>">
     <img
@@ -42,55 +42,53 @@
 
   <h3 style="color: white; margin-left: 60px">Genres</h3>
 
-<div style="display: flex; width: 95%; justify-content: space-evenly; height: 310px; flex-wrap: wrap; align-items: center; max-width: fit-content;
-margin-left: auto;
-margin-right: auto;">
-  <a href="/genre/action"><div class="card bg-dark text-white">
-    <img class="card-img" src="https://image.tmdb.org/t/p/original/8taH6LysZ46bMjx0fMaAaMXCg1R.jpg" alt="Card image" style="width: 250px; opacity: 0.4;">
+<div class = "container-fluid" style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
+  <a href="/genre/action"><div class="card bg-dark text-white"  style="margin: 10px 0px;">
+    <img class="gen" src="https://image.tmdb.org/t/p/original/8taH6LysZ46bMjx0fMaAaMXCg1R.jpg" alt="Card image">
     <div class="card-img-overlay" style="align-content: center;">
       <h5 class="card-title" style="text-align: center;">Action</h5>
     </div></div></a>
   
-    <a href="/genre/animation"><div class="card bg-dark text-white">
-    <img class="card-img" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/kGWpZewzInbzTuaIHcy0bFgzXuM.jpg" alt="Card image" style="width: 250px; opacity: 0.4;">
+    <a href="/genre/animation"><div class="card bg-dark text-white" style="margin: 10px 0px;">
+    <img class="gen" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/kGWpZewzInbzTuaIHcy0bFgzXuM.jpg" alt="Card image">
     <div class="card-img-overlay"  style="align-content: center;">
       <h5 class="card-title"  style="text-align: center;">Animation</h5>
     </div></div></a>
 
-    <a href="/genre/comedy"><div class="card bg-dark text-white">
-      <img class="card-img" src="https://image.tmdb.org/t/p/original/fNkwOE5MzzaWUQE8DwsNm1M6u3m.jpg" style="width: 250px; opacity: 0.4;">
+    <a href="/genre/comedy"><div class="card bg-dark text-white" style="margin: 10px 0px;">
+      <img class="gen" src="https://image.tmdb.org/t/p/original/fNkwOE5MzzaWUQE8DwsNm1M6u3m.jpg">
       <div class="card-img-overlay" style="align-content: center;">
         <h5 class="card-title"  style="text-align: center;">Comedy</h5>
       </div></div></a>
 
-      <a href="/genre/crime"><div class="card bg-dark text-white">
-        <img class="card-img" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/p5kpFS0P3lIwzwzHBOULQovNWyj.jpg" alt="Card image" style="width: 250px; opacity: 0.4;">
+      <a href="/genre/crime"><div class="card bg-dark text-white" style="margin: 10px 0px;">
+        <img class="gen" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/p5kpFS0P3lIwzwzHBOULQovNWyj.jpg" alt="Card image">
         <div class="card-img-overlay" style="align-content: center;">
           <h5 class="card-title" style="text-align: center;">Crime</h5>
         </div>
   </div></a>
 
-  <a href="/genre/drama"><div class="card bg-dark text-white">
-    <img class="card-img" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/yOIucoHiOo7ERJvPQOuC8B9ehG5.jpg" alt="Card image" style="width: 250px; opacity: 0.4;">
+  <a href="/genre/drama"><div class="card bg-dark text-white" style="margin: 10px 0px;">
+    <img class="gen" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/yOIucoHiOo7ERJvPQOuC8B9ehG5.jpg" alt="Card image">
     <div class="card-img-overlay" style="align-content: center;">
       <h5 class="card-title" style="text-align: center";>Drama</h5>
     </div></div></a>
 
-    <a href="/genre/mystery"><div class="card bg-dark text-white">
-    <img class="card-img" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/tRS6jvPM9qPrrnx2KRp3ew96Yot.jpg" alt="Card image" style="width: 250px; opacity: 0.4;">
+    <a href="/genre/mystery"><div class="card bg-dark text-white" style="margin: 10px 0px;">
+    <img class="gen" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/tRS6jvPM9qPrrnx2KRp3ew96Yot.jpg" alt="Card image">
     <div class="card-img-overlay" style="align-content: center;">
       <h5 class="card-title" style="text-align: center";>Mystery</h5>
     </div></div></a>
 
-    <a href="/genre/romance"><div class="card bg-dark text-white">
-    <img class="card-img" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sDH1LkdFOkQmTJaF1sIIniQyFOk.jpg" alt="Card image" style="width: 250px; opacity: 0.4;">
+    <a href="/genre/romance"><div class="card bg-dark text-white" style="margin: 10px 0px;">
+    <img class="gen" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sDH1LkdFOkQmTJaF1sIIniQyFOk.jpg" alt="Card image">
     <div class="card-img-overlay" style="align-content: center;">
       <h5 class="card-title" style="text-align: center;">Romance</h5>
     </div>
     </div></a>
 
-    <a href="/genre/scifi"><div class="card bg-dark text-white">
-    <img class="card-img" src="https://image.tmdb.org/t/p/original/ylkdrn23p3gQcHx7ukIfuy2CkTE.jpg" alt="Card image" style="width: 250px; opacity: 0.4;">
+    <a href="/genre/scifi"><div class="card bg-dark text-white" style="margin: 10px 0px;">
+    <img class="gen" src="https://image.tmdb.org/t/p/original/ylkdrn23p3gQcHx7ukIfuy2CkTE.jpg" alt="Card image">
     <div class="card-img-overlay" style="align-content: center;">
       <h5 class="card-title" style="text-align: center;">Science Fiction</h5>
     </div>
