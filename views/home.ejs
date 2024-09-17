@@ -1,12 +1,10 @@
 <%- include('partials/navbar') %>
 
-<section class="container" style="width: 1200px;">
+<section class="container"">
   <h3 style="color: white; margin-left: 30px; margin-top: 80px">
     Trending Movies
   </h3>
-  <div class="posters" style="max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;"><div style="display: flex; justify-content: space-evenly; height: 500px; flex-wrap: wrap; width: 100%;">
+  <div><div style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
     <% for (let i = 0; i < 12; i++) { %>
     <a href=<%=`/id/${popMovies.results[i].id}`%>>
        <img src="https://image.tmdb.org/t/p/original<%= popMovies.results[i].poster_path %>" class="img-fluid" alt="movie.title" style="max-width: 150px;border-radius: 10px;margin: 10px;margin-left: 20px;">
