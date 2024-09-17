@@ -11,6 +11,10 @@
       crossorigin="anonymous"
     />
     <style>
+      input {
+        width: 200px;
+        height: 35px;
+      }
       .container {
         width: 80%;
       }
@@ -24,9 +28,18 @@
         width: 250px;
         opacity: 0.4;
       }
+      #sear {
+        margin-right: 180px;
+      }
       @media screen and (max-width: 800px) {
+        nav {
+          height: 70px;
+        }
+        input {
+          width: 150px;
+        }
         .container {
-          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+          width: 100%;
         }
         .gen {
           width: 150px;
@@ -34,6 +47,9 @@
         #logo {
           margin-left: 0px;
           border: 0px;
+        }
+        #sear {
+          margin-right: 0;
         }
       }
     </style>
@@ -60,7 +76,7 @@
               style="height: 70px"
           /></a>
 
-          <div>
+          <div style="margin: 10px; color: white">
             <a href="/" style="text-decoration: none; color: white">Home</a>
           </div>
           <div style="margin: 10px; color: white">
@@ -72,21 +88,18 @@
           </div>
         </div>
 
-        <div style="display: flex; justify-content: right; margin-right: 180px">
+        <div id="sear" style="display: flex; justify-content: right">
           <form class="d-flex" action="/search" method="POST">
             <input
               style="background-color: black; border-width: 0; color: white"
-              class="form-control me-2"
               type="text"
               name="name"
               placeholder=""
               required
             />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
           </form>
         </div>
       </div>
     </nav>
-
+  </body>
+</html>
