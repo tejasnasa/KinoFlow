@@ -1,6 +1,5 @@
 <%- include('partials/navbar') %>
-<section class="container">
-
+<section class="container"">
   <h3 style=" color: white; margin-left: 30px; margin-top: 30px">
     Trending Movies
     </h3>
@@ -13,6 +12,8 @@
                     class="img-fluid" alt="movie.title"
                     style="max-width: 150px;border-radius: 10px;margin: 10px;margin-left: 20px;">
             </a>
+
+            
             <% } %>
         </div>
 
@@ -34,6 +35,8 @@
         margin-left: 20px;
       ">
             </a>
+
+            
             <% } %>
         </div>
     </div>
@@ -44,8 +47,7 @@
 
     <h3 style="color: white; margin-left: 60px">Genres</h3>
 
-    <div class="container-fluid"
-        style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
+    <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
         <a href="/genre/action">
             <div class="card bg-dark text-white" style="margin: 10px 0px;">
                 <img class="gen"
@@ -145,7 +147,6 @@
     <div class="line" style="padding: 10px; align-items: center; color: white">
         <hr />
     </div>
-    <!-- Remove the container if you want to extend the Footer to full width. -->
 
 </section>
 <%- include('partials/footer') %>

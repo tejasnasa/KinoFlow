@@ -1,23 +1,25 @@
-<%- include('partials/navbar')%>
+<%- include('partials/navbar') %>
+<section class="container">
 
-<section class="container" style="width: 1200px;">
-<h2 style="color: white; margin-left: 20px; margin-top: 80px;">Search results for: <%= userInput %></h2>
+    <h2 style="color: white; margin-left: 20px; margin-top: 30px;">Search
+        results for:
+        <%= userInput %>
+    </h2>
 
-<% for (let i = 0; i < length; i++) { %>
+    <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
+        <% for (let i = 0; i < length; i++) { %><a
+            href="/id/<%= movies.results[i].id %>">
+            <img src="https://image.tmdb.org/t/p/original<%= movies.results[i].poster_path %>"
+                class="img-fluid"
+                alt="<%= movies.results[i].title %>"
+                style="max-width: 150px;border-radius: 10px;margin: 10px;margin-left: 20px;">
+        </a>
 
-    <a href=<%=`/id/${movies.results[i].id}`%> style = "margin: 5px; display: inline-block; text-align: center;text-decoration: none;" >
-
-        <img src="https://image.tmdb.org/t/p/original<%= movies.results[i].poster_path %>" class="img-fluid"
-        alt="<%= movies.results[i].title %>"
-        style="
-          max-width: 150px;
-          border-radius: 10px;
-          margin: 10px;
-          margin-left: 20px;
-        ">
-
-
-    </a>
-<% } %>
+        
+        <% } %>
+    </div>
+    <div class="line" style="padding: 10px; align-items: center; color: white">
+        <hr />
+    </div>
 </section>
-<%- include('partials/footer')%>
+<%- include('partials/footer') %>
