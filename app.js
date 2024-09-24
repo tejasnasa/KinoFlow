@@ -2,7 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const path = require("path");
 const bodyParser = require("body-parser");
-const { getTopRatedMovies, getPopularMovies, getMovieDetails, getMovieCredits, searchMovies, getRandomMovie, getSimilarMovies, getMoviesByGenre } = require('./tmdbApi');
+const { getTopRatedMovies, getPopularMovies, getMovieDetails, getMovieCredits, searchMovies, getSimilarMovies, getMoviesByGenre } = require('./tmdbApi');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -53,17 +53,6 @@ app.post("/search", async (req, res) => {
     const movies = await searchMovies(userInput);
     const length = Math.min(movies.results.length, 18);
     res.render("search", { movies, userInput, length });
-  } catch (error) {
-    console.error(error);
-    renderError(res);
-  }
-});
-
-// Random Movie Route
-app.get("/random", async (req, res) => {
-  try {
-    const movie = await getRandomMovie();
-    res.render("details", movie);
   } catch (error) {
     console.error(error);
     renderError(res);

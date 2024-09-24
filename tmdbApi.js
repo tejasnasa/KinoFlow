@@ -26,7 +26,6 @@ const getPopularMovies = () => makeApiRequest("/discover/movie", { sort_by: "pop
 const getMovieDetails = (id) => makeApiRequest(`/movie/${id}`);
 const getMovieCredits = (id) => makeApiRequest(`/movie/${id}/credits`);
 const searchMovies = (query) => makeApiRequest("/search/movie", { query });
-const getRandomMovie = () => makeApiRequest("/discover/movie", { page: Math.floor(Math.random() * 500) }).then(data => data.results[0]);
 const getSimilarMovies = (id) => makeApiRequest(`/movie/${id}/similar`);
 const getMoviesByGenre = (genreId) => makeApiRequest("/discover/movie", { with_genres: genreId, sort_by: "popularity.desc", page: 1 });
 
@@ -36,7 +35,6 @@ module.exports = {
   getMovieDetails,
   getMovieCredits,
   searchMovies,
-  getRandomMovie,
   getSimilarMovies,
   getMoviesByGenre,
 };
