@@ -1,88 +1,96 @@
-<%- include('partials/navbar')%>
-<section class="container" style="color: white; width: 1200px">
-  <div class="space"></div>
-
-  <div class="posters" style="display: flex; justify-content: flex-start; margin-top: 10px;">
-    <img
-      src="https://image.tmdb.org/t/p/original<%= movie.poster_path %>"
-      class="img-fluid"
-      alt=""
-      style="
-        max-width: 300px;
-        height: fit-content;
-        border-radius: 10px;
-        margin: 30px;
-        margin-left: 20px;
-        margin-top: 80px;
-      "
-    />
-    <div>
-      <div
-        style="
-          margin-top: 70px;
-          font-size: 50px;
+<%- include('partials/navbar') %>
+<section class="container">
+    <div class="card mb-3 mt-4" style="background-color: black;">
+        <div class="row g-0">
+            <div class="col-md-3">
+                <img src="https://image.tmdb.org/t/p/original<%= movie.poster_path %>"
+                    class="img-fluid rounded" alt="">
+            </div>
+            <div class="col-md-9" style="color: white;">
+                <div class="card-body">
+                    <h1 class="card-title" style="
           font-family: Georgia, 'Times New Roman', Times, serif;
-        "
-      >
-        <%= movie.title %>
-      </div>
-      <div style="font-size: 18px; color: grey">
-        <%= movie.tagline.toUpperCase() %>
-      </div>
-      <br /><br />
-      <div style="font-size: 20px">
-        <%= movie.overview %>
-        <br /><br />
-        <b>Director:</b> <%= director %>
-        <br />
-        <b>Cast:</b> <%= movieCredits.cast[0].name %><% for (let i = 1; i < 10; i++){ %>
-        <span>, <%=movieCredits.cast[i].name%></span>
-        <% } %>
-      </div>
-    </div>
-  </div>
-
-  <div class="line" style="padding: 10px; align-items: center; color: white">
-    <hr />
-  </div>
-
-  <div style="display: flex; justify-content: space-evenly;">
-    <div style="width: 30%; background-color: rgb(33,32,41); height: auto; font-size: 17px; padding: 10px;">
-      <b>Genres: </b> <%= movie.genres[0].name %> <% for(let i = 1; i < movie.genres.length; i++){ %>
-        , <%= movie.genres[i].name %>
-      <% } %>
-      <br><br>
-      <b>Release date: </b><%= movie.release_date %>
-      <br><br>
-      <b>Rating: </b><%= movie.vote_average %>
-      <br><br>
-      <b>Runtime: </b><%= movie.runtime %> minutes
-      <br><br>
-      <b>Budget: </b><%= parseInt(movie.budget/1000000) %>M
-      <br><br>
-      <b>Revenue: </b><%= parseInt(movie.revenue/1000000) %>M
-      <br><br>
-      <b>Production Companies: </b> <%= movie.production_companies[0].name %> <% for(let i = 1; i < movie.production_companies.length; i++){ %>
-        , <%= movie.production_companies[i].name %>
-      <% } %>
-      
+        ">
+                        <%= movie.title %>
+                    </h1>
+                    <p class="card-text" style="font-size: 18px; color: grey">
+                        <%= movie.tagline.toUpperCase() %>
+                    </p>
+                    <p class="card-text" style="font-size: 18px">
+                        <%= movie.overview %><br /><br />
+                        <b>Director:</b>
+                        <%= director %><br />
+                        <b>Cast:</b>
+                        <%= movieCredits.cast[0].name %>
+                        <% for (let i = 1; i < 10; i++) { %>
+                        <span>,
+                            <%= movieCredits.cast[i].name %>
+                        </span>
+                        <% } %>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div style="width: 60%; height: auto;">
-      <h3>Reviews: </h3>
-      <ul>
-        <% for (let i = 0; i < 5; i++){ %>
-          <li>
-          <% const random70 = Math.floor(Math.random() * 70); %>
-          <% const random25 = Math.floor(Math.random() * 25); %>
-          <b><%= names[random70] %></b> <br>
-          <%= reviews[random25].review %> <br>
-          <b>Rating: <%= reviews[random25].rating %></b> <br><br>
-          </li>
-        <% } %>
-      </ul>
-    </div>
-  </div>
 
-  <%- include('partials/footer')%>
+
+    <div class="line" style="padding: 10px; align-items: center; color: white">
+        <hr />
+    </div>
+
+    <div>
+        <div class="row gy-4" style="color: white;">
+            <div class="col-lg-4 p-4" style="background-color: rgb(33,32,41);">
+                <b>Genres: </b>
+                <%= movie.genres[0].name %>
+                <% for (let i = 1; i < movie.genres.length; i++) { %>
+                ,
+                <%= movie.genres[i].name %>
+                
+                <% } %><br><br>
+                <b>Release date: </b>
+                <%= movie.release_date %><br><br>
+                <b>Rating: </b>
+                <%= movie.vote_average %><br><br>
+                <b>Runtime: </b>
+                <%= movie.runtime %>minutes
+                <br><br>
+                <b>Budget: </b>
+                <%= parseInt(movie.budget / 1000000) %>M
+                <br><br>
+                <b>Revenue: </b>
+                <%= parseInt(movie.revenue / 1000000) %>M
+                <br><br>
+                <b>Production Companies: </b>
+                <%= movie.production_companies[0].name %>
+                <% for (let i = 1; i < movie.production_companies.length; i++) { %>
+                ,
+                <%= movie.production_companies[i].name %>
+                
+                <% } %>
+            </div>
+            <div class="col-lg-8">
+                <h3>Reviews: </h3>
+                <ul>
+                    <% for (let i = 0; i < 5; i++) { %>
+                    <li>
+                        <% const random70 = Math.floor(Math.random() * 70); %>
+                        <% const random25 = Math.floor(Math.random() * 25); %>
+                        <b>
+                            <%= names[random70] %>
+                        </b> <br>
+                        <%= reviews[random25].review %><br>
+                        <b>Rating:
+                            <%= reviews[random25].rating %>
+                        </b> <br><br>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <%- include('partials/footer') %>
 </section>

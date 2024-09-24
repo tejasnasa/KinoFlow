@@ -1,104 +1,151 @@
 <%- include('partials/navbar') %>
+<section class="container">
 
-<section class="container"">
-  <h3 style="color: white; margin-left: 30px; margin-top: 80px">
+  <h3 style=" color: white; margin-left: 30px; margin-top: 30px">
     Trending Movies
-  </h3>
-  <div><div style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
-    <% for (let i = 0; i < 12; i++) { %>
-    <a href=<%=`/id/${popMovies.results[i].id}`%>>
-       <img src="https://image.tmdb.org/t/p/original<%= popMovies.results[i].poster_path %>" class="img-fluid" alt="movie.title" style="max-width: 150px;border-radius: 10px;margin: 10px;margin-left: 20px;">
-      </a>
-    <% } %></div>
+    </h3>
+    <div>
+        <div
+            style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
+            <% for (let i = 0; i < 12; i++) { %><a
+                href=<%= `/id/${popMovies.results[i].id}` %>>
+                <img src="https://image.tmdb.org/t/p/original<%= popMovies.results[i].poster_path %>"
+                    class="img-fluid" alt="movie.title"
+                    style="max-width: 150px;border-radius: 10px;margin: 10px;margin-left: 20px;">
+            </a>
+            <% } %>
+        </div>
 
-    <div class="line" style="padding: 10px; align-items: center; color: white">
-      <hr />
-    </div>
+        <div class="line"
+            style="padding: 10px; align-items: center; color: white">
+            <hr />
+        </div>
 
-    <h3 style="color: white; margin-left: 30px">Popular Movies</h3>
-    <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
-    <% for (let i = 0; i < 12; i++) { %>
-    <a href="/id/<%= trenMovies.results[i].id %>">
-    <img
-      src="https://image.tmdb.org/t/p/original<%= trenMovies.results[i].poster_path %>"
-      class="img-fluid"
-      alt="movie.title"
-      style="
+        <h3 style="color: white; margin-left: 30px">Popular Movies</h3>
+        <div
+            style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
+            <% for (let i = 0; i < 12; i++) { %><a
+                href="/id/<%= trenMovies.results[i].id %>">
+                <img src="https://image.tmdb.org/t/p/original<%= trenMovies.results[i].poster_path %>"
+                    class="img-fluid" alt="movie.title" style="
         max-width: 150px;
         border-radius: 10px;
         margin: 10px;
         margin-left: 20px;
-      "
-    >
-    </a>
-    <% } %></div>
-  </div>
-
-  <div class="line" style="padding: 10px; align-items: center; color: white">
-    <hr />
-  </div>
-
-
-
-  <h3 style="color: white; margin-left: 60px">Genres</h3>
-
-<div class = "container-fluid" style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
-  <a href="/genre/action"><div class="card bg-dark text-white"  style="margin: 10px 0px;">
-    <img class="gen" src="https://image.tmdb.org/t/p/original/8taH6LysZ46bMjx0fMaAaMXCg1R.jpg" alt="Card image">
-    <div class="card-img-overlay" style="align-content: center;">
-      <h5 class="card-title" style="text-align: center;">Action</h5>
-    </div></div></a>
-  
-    <a href="/genre/animation"><div class="card bg-dark text-white" style="margin: 10px 0px;">
-    <img class="gen" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/kGWpZewzInbzTuaIHcy0bFgzXuM.jpg" alt="Card image">
-    <div class="card-img-overlay"  style="align-content: center;">
-      <h5 class="card-title"  style="text-align: center;">Animation</h5>
-    </div></div></a>
-
-    <a href="/genre/comedy"><div class="card bg-dark text-white" style="margin: 10px 0px;">
-      <img class="gen" src="https://image.tmdb.org/t/p/original/fNkwOE5MzzaWUQE8DwsNm1M6u3m.jpg">
-      <div class="card-img-overlay" style="align-content: center;">
-        <h5 class="card-title"  style="text-align: center;">Comedy</h5>
-      </div></div></a>
-
-      <a href="/genre/crime"><div class="card bg-dark text-white" style="margin: 10px 0px;">
-        <img class="gen" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/p5kpFS0P3lIwzwzHBOULQovNWyj.jpg" alt="Card image">
-        <div class="card-img-overlay" style="align-content: center;">
-          <h5 class="card-title" style="text-align: center;">Crime</h5>
+      ">
+            </a>
+            <% } %>
         </div>
-  </div></a>
-
-  <a href="/genre/drama"><div class="card bg-dark text-white" style="margin: 10px 0px;">
-    <img class="gen" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/yOIucoHiOo7ERJvPQOuC8B9ehG5.jpg" alt="Card image">
-    <div class="card-img-overlay" style="align-content: center;">
-      <h5 class="card-title" style="text-align: center";>Drama</h5>
-    </div></div></a>
-
-    <a href="/genre/mystery"><div class="card bg-dark text-white" style="margin: 10px 0px;">
-    <img class="gen" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/tRS6jvPM9qPrrnx2KRp3ew96Yot.jpg" alt="Card image">
-    <div class="card-img-overlay" style="align-content: center;">
-      <h5 class="card-title" style="text-align: center";>Mystery</h5>
-    </div></div></a>
-
-    <a href="/genre/romance"><div class="card bg-dark text-white" style="margin: 10px 0px;">
-    <img class="gen" src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sDH1LkdFOkQmTJaF1sIIniQyFOk.jpg" alt="Card image">
-    <div class="card-img-overlay" style="align-content: center;">
-      <h5 class="card-title" style="text-align: center;">Romance</h5>
     </div>
-    </div></a>
 
-    <a href="/genre/scifi"><div class="card bg-dark text-white" style="margin: 10px 0px;">
-    <img class="gen" src="https://image.tmdb.org/t/p/original/ylkdrn23p3gQcHx7ukIfuy2CkTE.jpg" alt="Card image">
-    <div class="card-img-overlay" style="align-content: center;">
-      <h5 class="card-title" style="text-align: center;">Science Fiction</h5>
+    <div class="line" style="padding: 10px; align-items: center; color: white">
+        <hr />
     </div>
-  </div></a>
-</div>
 
-<div class="line" style="padding: 10px; align-items: center; color: white">
-  <hr />
-</div>
-  <!-- Remove the container if you want to extend the Footer to full width. -->
-  
+    <h3 style="color: white; margin-left: 60px">Genres</h3>
+
+    <div class="container-fluid"
+        style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
+        <a href="/genre/action">
+            <div class="card bg-dark text-white" style="margin: 10px 0px;">
+                <img class="gen"
+                    src="https://image.tmdb.org/t/p/original/8taH6LysZ46bMjx0fMaAaMXCg1R.jpg"
+                    alt="Card image">
+                <div class="card-img-overlay" style="align-content: center;">
+                    <h5 class="card-title" style="text-align: center;">Action
+                    </h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="/genre/animation">
+            <div class="card bg-dark text-white" style="margin: 10px 0px;">
+                <img class="gen"
+                    src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/kGWpZewzInbzTuaIHcy0bFgzXuM.jpg"
+                    alt="Card image">
+                <div class="card-img-overlay" style="align-content: center;">
+                    <h5 class="card-title" style="text-align: center;">Animation
+                    </h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="/genre/comedy">
+            <div class="card bg-dark text-white" style="margin: 10px 0px;">
+                <img class="gen"
+                    src="https://image.tmdb.org/t/p/original/fNkwOE5MzzaWUQE8DwsNm1M6u3m.jpg">
+                <div class="card-img-overlay" style="align-content: center;">
+                    <h5 class="card-title" style="text-align: center;">Comedy
+                    </h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="/genre/crime">
+            <div class="card bg-dark text-white" style="margin: 10px 0px;">
+                <img class="gen"
+                    src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/p5kpFS0P3lIwzwzHBOULQovNWyj.jpg"
+                    alt="Card image">
+                <div class="card-img-overlay" style="align-content: center;">
+                    <h5 class="card-title" style="text-align: center;">Crime
+                    </h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="/genre/drama">
+            <div class="card bg-dark text-white" style="margin: 10px 0px;">
+                <img class="gen"
+                    src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/yOIucoHiOo7ERJvPQOuC8B9ehG5.jpg"
+                    alt="Card image">
+                <div class="card-img-overlay" style="align-content: center;">
+                    <h5 class="card-title" style="text-align: center" ;>Drama
+                    </h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="/genre/mystery">
+            <div class="card bg-dark text-white" style="margin: 10px 0px;">
+                <img class="gen"
+                    src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/tRS6jvPM9qPrrnx2KRp3ew96Yot.jpg"
+                    alt="Card image">
+                <div class="card-img-overlay" style="align-content: center;">
+                    <h5 class="card-title" style="text-align: center" ;>Mystery
+                    </h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="/genre/romance">
+            <div class="card bg-dark text-white" style="margin: 10px 0px;">
+                <img class="gen"
+                    src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sDH1LkdFOkQmTJaF1sIIniQyFOk.jpg"
+                    alt="Card image">
+                <div class="card-img-overlay" style="align-content: center;">
+                    <h5 class="card-title" style="text-align: center;">Romance
+                    </h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="/genre/scifi">
+            <div class="card bg-dark text-white" style="margin: 10px 0px;">
+                <img class="gen"
+                    src="https://image.tmdb.org/t/p/original/ylkdrn23p3gQcHx7ukIfuy2CkTE.jpg"
+                    alt="Card image">
+                <div class="card-img-overlay" style="align-content: center;">
+                    <h5 class="card-title" style="text-align: center;">Science
+                        Fiction</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="line" style="padding: 10px; align-items: center; color: white">
+        <hr />
+    </div>
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+
 </section>
-<%- include('partials/footer')%>
+<%- include('partials/footer') %>
